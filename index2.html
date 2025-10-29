@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IIBF Registration Guide — Finvesta (Bilingual)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f9fc; --card:#ffffff; --accent:#0b63a8; --accent-2:#117a65; --muted:#6b7280; --success:#0f5132;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;background:var(--bg);color:#0f172a}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.06);padding:20px}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#1fa2ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+
+    .toolbar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6edf6;color:var(--accent)}
+    .btn-print{background:var(--accent-2);color:white}
+
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+    .section{padding:14px;border-radius:10px}
+    .left{background:linear-gradient(180deg,rgba(11,99,168,0.03),transparent)}
+    .right{background:linear-gradient(180deg,rgba(17,122,101,0.03),transparent)}
+
+    .step{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:8px;margin-bottom:10px}
+    .step .num{width:42px;height:42px;border-radius:10px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 3px 10px rgba(11,99,168,0.06)}
+    .step h4{margin:0;font-size:15px}
+    .step p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    .doc-list{list-style:none;padding:0;margin:6px 0}
+    .doc-list li{background:linear-gradient(90deg,rgba(0,0,0,0.02),transparent);padding:8px;border-radius:8px;margin-bottom:8px;font-size:14px}
+
+    .flow{display:flex;flex-direction:column;gap:8px;align-items:center;padding:12px}
+    .flow .node{width:100%;background:var(--card);padding:10px;border-radius:8px;text-align:center;border:1px solid #edf6fb}
+
+    .links a{display:block;color:var(--accent);text-decoration:none;margin-bottom:6px}
+    .muted{color:var(--muted);font-size:13px}
+
+    .toggle{margin-left:auto}
+    .language{display:inline-flex;gap:6px;border-radius:8px;overflow:hidden}
+    .language button{padding:6px 10px;border:0;background:transparent;cursor:pointer}
+    .language button.active{background:var(--accent);color:white}
+
+    footer{margin-top:18px;font-size:13px;color:var(--muted);display:flex;gap:12px;align-items:center}
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.right{order:2}}
+
+    /* printable tweaks */
+    @media print{body{background:white}.wrap{box-shadow:none;margin:0;padding:0}.card{box-shadow:none}}
+
+    /* small helper styles */
+    .kbd{background:#eef6ff;border-radius:6px;padding:6px 8px;font-weight:600;color:var(--accent);display:inline-block}
+    .note{background:#fff8e1;border-left:4px solid #ffd54f;padding:10px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">IIBF</div>
+        <div>
+          <h1>IIBF Registration Guide — Finvesta App <span style="font-size:12px;display:block;color:var(--muted)">IIBF पंजीकरण गाइड — फिनवेस्टा ऐप</span></h1>
+          <p class="lead">Simple step-by-step guide in English & Hindi for CSP agents. / सीएसपी एजेंट्स के लिए आसान स्टेप-बाय-स्टेप गाइड — हिंदी व अंग्रेज़ी दोनों में।</p>
+        </div>
+        <div class="toggle">
+          <div class="language" role="tablist" aria-label="language toggle">
+            <button id="lang-en" class="active" onclick="setLang('en')">English</button>
+            <button id="lang-hi" onclick="setLang('hi')">हिन्दी</button>
+            <button class="btn btn-ghost" style="margin-left:10px;" onclick="copyContent()">Copy</button>
+            <button class="btn btn-print" onclick="window.print()">Print / PDF</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <button class="btn btn-primary" onclick="openLink('https://play.google.com/store/apps/details?id=com.fiatechnologyservicesb2b&pcampaignid=web_share')">Open Finvesta App (Play Store)</button>
+        <button class="btn btn-ghost" onclick="openLink('https://forms.gle/faVxxNLMTrGy5upX8')">Open Upload Form</button>
+        <button class="btn" onclick="openLink('https://www.iibf.org.in/certificate_exam_schedule.asp?tab=ac-21')">IIBF Exam Schedule</button>
+      </div>
+
+      <div class="grid" id="main-grid">
+        <div class="section left">
+          <h3 id="what-title">What is IIBF? / IIBF क्या है?</h3>
+          <p id="what-desc">Indian Institute of Banking & Finance (IIBF) is a government recognized body that provides certification for banking, finance and CSP/BC agents. For CSP agents, IIBF certification is mandatory to carry out authorized banking services.<br><br>भारतीय बैंकिंग और वित्त संस्थान (IIBF) एक सरकारी मान्यता प्राप्त संस्था है जो बैंकिंग, वित्त और CSP/BC एजेंट्स के लिए प्रमाणपत्र प्रदान करती है। CSP एजेंट्स के लिए IIBF सर्टिफिकेट अनिवार्य है।</p>
+
+          <h4 style="margin-top:12px">Why it matters / यह क्यों जरूरी है</h4>
+          <ul id="why" style="margin:8px 0 12px;color:var(--muted)">
+            <li>✔ Authorized to work under banks. / बैंक के अन्तर्गत कार्य करने की अनुमति</li>
+            <li>✔ Builds customer trust and satisfies bank requirements. / ग्राहक का विश्वास और बैंक की आवश्यकता पूरी होती है</li>
+            <li>✔ Without IIBF, CSP ID may get deactivated. / बिना IIBF प्रमाणपत्र CSP आईडी निलंबित हो सकती है</li>
+          </ul>
+
+          <h3 style="margin-top:8px">Payment Steps / भुगतान के चरण</h3>
+
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h4>Open Finvesta App → Login / फिनवेस्टा ऐप खोलें → लॉगिन करें</h4>
+              <p>Open the Finvesta app from Play Store or your device and log in with your credentials. / प्ले स्टोर या डिवाइस से फिनवेस्टा ऐप खोलें और अपने क्रेडेंशियल से लॉगिन करें।</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h4>Go to Payment Collection / पेमेंट कलेक्शन पर जाएँ</h4>
+              <p>Select "Payment Collection" from the main menu or dashboard. / मेन मेनू या डैशबोर्ड से "Payment Collection" चुनें।</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h4>Select Product → IIBF Fresher (₹3180) / उत्पाद चुनें → IIBF Fresher (₹3186)</h4>
+              <p>Choose "IIBF Fresher" for new registration applicants and confirm the amount ₹3180. / नए पंजीकरण के लिए "IIBF Fresher" चुनें और राशि ₹3180 की पुष्टि करें।</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h4>Click Pay Now → Complete Payment / पे नाउ पर क्लिक करें → भुगतान पूरा करें</h4>
+              <p>Use UPI/Bank/Razorpay or other options shown to complete the payment. / भुगतान पूरा करने के लिए UPI/बैंक/रैज़रपे आदि विकल्पों का उपयोग करें।</p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4>Documents to Upload / अपलोड करने के दस्तावेज</h4>
+            <ul class="doc-list">
+              <li>• Photo / फोटो — JPG only, Max 20 MB</li>
+              <li>• PAN Card or Aadhaar Card / पैन कार्ड या आधार कार्ड — JPG only, Max 20 MB</li>
+              <li>• Qualification Marksheet / योग्यता अंकपत्र — JPG only, Max 20 MB</li>
+              <li>• Signature / हस्ताक्षर — JPG only, Max 20 MB</li>
+            </ul>
+            <p class="muted">⚠ Important: Do not send documents in PDF format. / दस्तावेज़ PDF में न भेजें।</p>
+            <p style="margin-top:10px"><strong>Upload Link / अपलोड लिंक:</strong> <a href="https://forms.gle/faVxxNLMTrGy5upX8" target="_blank">https://forms.gle/faVxxNLMTrGy5upX8</a></p>
+          </div>
+
+          <div style="margin-top:12px" class="note">
+            <strong>After Training / प्रशिक्षण के बाद:</strong>
+            <div class="muted">Once your training is complete, check IIBF website for exam schedules and registration dates: <br>
+              <a href="https://www.iibf.org.in/certificate_exam_schedule.asp?tab=ac-21" target="_blank">IIBF Exam Schedule</a>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="section right">
+          <h3 style="margin-top:0">Quick Flow / त्वरित प्रक्रिया</h3>
+          <div class="flow">
+            <div class="node">Open Finvesta App / फिनवेस्टा ऐप खोलें</div>
+            <div class="node">Payment Collection / पेमेंट कलेक्शन</div>
+            <div class="node">Select Product / उत्पाद चुनें</div>
+            <div class="node">IIBF Fresher ₹3186 / आईआईबीएफ फ्रेशर ₹3180</div>
+            <div class="node">Click Pay Now / पे नाउ पर क्लिक करें</div>
+            <div class="node">Upload Documents (JPG ≤ 20MB) / दस्तावेज़ अपलोड करें (JPG ≤ 20MB)</div>
+            <div class="node">Submit on Google Form / गूगल फॉर्म पर सबमिट करें</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4>Helpful Links / सहायक लिंक</h4>
+            <div class="links">
+              <a href="https://play.google.com/store/apps/details?id=com.fiatechnologyservicesb2b&pcampaignid=web_share" target="_blank">Finvesta on Play Store</a>
+              <a href="https://forms.gle/faVxxNLMTrGy5upX8" target="_blank">Document Upload Form</a>
+              <a href="https://www.iibf.org.in/certificate_exam_schedule.asp?tab=ac-21" target="_blank">IIBF Exam Schedule Page</a>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4>Tips / सुझाव</h4>
+            <ul style="color:var(--muted)">
+              <li>Keep JPG images clear and readable, crop unnecessary background.</li>
+              <li>Check file size in your phone gallery before uploading.</li>
+              <li>If upload fails, try compressing images slightly (maintain readability).</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4>Contact / संपर्क</h4>
+            <p class="muted">If you need help, share the screenshot of the payment receipt and we will assist. / सहायता के लिए भुगतान रसीद की स्क्रीनशॉट भेजें।</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div class="muted">Designed for CSP agents • English / हिन्दी</div>
+        <div style="margin-left:auto" class="muted">Tip: Use the Print / PDF button to save this guide as PDF.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function openLink(url){window.open(url,'_blank')}
+    function setLang(lang){
+      document.getElementById('lang-en').classList.remove('active');
+      document.getElementById('lang-hi').classList.remove('active');
+      document.getElementById('lang-'+lang).classList.add('active');
+      // simple language toggle: hide or show Hindi fragments by replacing content
+      if(lang==='en'){
+        // set english-focused content
+        document.getElementById('what-title').innerText='What is IIBF? / IIBF क्या है?';
+        document.getElementById('what-desc').innerHTML = 'Indian Institute of Banking & Finance (IIBF) is a government recognized body that provides certification for banking, finance and CSP/BC agents. For CSP agents, IIBF certification is mandatory to carry out authorized banking services.<br><br>भारतीय बैंकिंग और वित्त संस्थान (IIBF) एक सरकारी मान्यता प्राप्त संस्था है जो बैंकिंग, वित्त और CSP/BC एजेंट्स के लिए प्रमाणपत्र प्रदान करती है। CSP एजेंट्स के लिए IIBF सर्टिफिकेट अनिवार्य है।';
+      } else {
+        document.getElementById('what-title').innerText='IIBF क्या है? / What is IIBF?';
+        document.getElementById('what-desc').innerHTML = 'भारतीय बैंकिंग और वित्त संस्थान (IIBF) एक सरकारी मान्यता प्राप्त संस्था है जो बैंकिंग, वित्त और CSP/BC एजेंट्स के लिए प्रमाणपत्र प्रदान करती है। CSP एजेंट्स के लिए IIBF सर्टिफिकेट अनिवार्य है।<br><br>Indian Institute of Banking & Finance (IIBF) is a government recognized body that provides certification for banking, finance and CSP/BC agents.';
+      }
+    }
+    function copyContent(){
+      const el = document.createElement('textarea');
+      el.value = document.querySelector('.card').innerText;
+      document.body.appendChild(el);
+      el.select();document.execCommand('copy');document.body.removeChild(el);
+      alert('Content copied to clipboard — अब आप इसे किसी को भेज सकते हैं');
+    }
+  </script>
+</body>
+</html>
